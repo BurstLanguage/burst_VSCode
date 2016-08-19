@@ -1,13 +1,32 @@
 # README
-## This is the README for your extension "burst-lang"
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
 
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
+## What is the purpose of this extension?
+This extension provides editing, debugging and syntax higlighting functionality for the Burst Language into VSCode.
 
-### For more information
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+## What is Burst?
 
-**Enjoy!**
+Burst is a C like interpereted language written by GigabyteGiant 
+which aims to be a fast interpreted general purpose programming language that will be familiar 
+to all C Programmers
+
+## Extension Features
+
+* Ability to edit Burst language files **i.e. files with the .burst extension**
+* Autocompletion for Burst language files **via intellisense**
+* Syntax higlighting for Burst language files
+* Debugging for interpereted Burst programs
+* Burst language syntax / lint checker
+* Support for Burst modules / project system
+
+## Authors
+
+* GigabyteGiant (Brynden Bielefeld)
+* 06needhamt aka ununpentium-299 (Tom Needham)
+
+## Contributing to this extension
+
+If you find any issues please feel free to file an issue at this repository.
+
+Patches are also welcome via pull requests on this repository.
+
+# Enjoy!!
