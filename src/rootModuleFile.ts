@@ -2,6 +2,8 @@
 import * as vscode from 'vscode';
 import * as IO from "fs"
 import {ModuleFile} from '../src/moduleFile';
+import {ResourceFile} from '../src/resourceFile'
+import {ResourceType} from '../src/resourceType'
 import {FileType} from "../src/fileType";
 import {serialize} from "serializer.ts/Serializer";
 
@@ -28,8 +30,6 @@ export class RootModuleFile {
 			gInstance.filterFiles(gfiles)
 			gInstance.writeFileAsync()
 		});
-		if (gFileObjects.length == 0)
-			console.log("Empty");
 		return true;
 
 	}
@@ -73,26 +73,38 @@ export class RootModuleFile {
 		let projectName: String = rootPath.substring(rootPath.lastIndexOf("\\") + 1, rootPath.length)
 		gFileObjects = [];
 		for (idx = 0; idx < files.length; idx++) {
-			let name: String = files[idx].substring(
+			let name: string = files[idx].substring(
 				files[idx].lastIndexOf("\\") + 1,
 				files[idx].lastIndexOf(".")
 			); // get file name
 			if (files[idx].endsWith(".burst")) {
 				let file: ModuleFile = new ModuleFile(vscode.Uri.parse(files[idx]),
-					FileType.Source
-					, name
+					FileType.Source,
+					this,
+					name
 				);
 				gFileObjects[idx] = file;
 			}
 			else {
-				//TODO(06needhamt) Handle Resource Files
 				if (files[idx] == projectName + ".json")
 					continue
-				let file: ModuleFile = new ModuleFile(vscode.Uri.parse(files[idx]),
-					FileType.Metadata,
-					name
-				);
-				gFileObjects[idx] = file;
+				if (this.isFileAResource(files[idx], name)) {
+					let file: ResourceFile = new ResourceFile(vscode.Uri.parse(files[idx]),
+						FileType.Resource,
+						this,
+						name
+					);
+					gFileObjects[idx] = file;
+				}
+				else {
+					let file: ModuleFile = new ModuleFile(vscode.Uri.parse(files[idx]),
+						FileType.Metadata,
+						this,
+						name
+					);
+					gFileObjects[idx] = file;
+				}
+
 			}
 			idx++;
 		}
@@ -101,6 +113,11 @@ export class RootModuleFile {
 		console.log("Finding Project Files")
 	}
 
+	isFileAResource(filePath: string, fileName: string): Boolean {
+		let temp = new ResourceFile(vscode.Uri.parse(filePath),
+			FileType.Resource, this, fileName)
+		return temp.enumerateResourceType() != ResourceType.Unknown;
+	}
 }
 
 
