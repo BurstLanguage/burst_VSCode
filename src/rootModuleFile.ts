@@ -53,7 +53,7 @@ export class RootModuleFile {
 		obj.moduleFiles = this.moduleFiles;
 		obj.projectName = this.projectName;
 		obj.rootPath = this.rootPath;
-		IO.writeFile(file.uri.fsPath, JSON.stringify(obj));
+		IO.writeFile(file.uri.fsPath, JSON.stringify(obj,null,"\t"));
 		return true;
 	}
 
