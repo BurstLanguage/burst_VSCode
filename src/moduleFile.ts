@@ -6,11 +6,11 @@ import {RootModuleFile} from '../src/rootModuleFile'
 export class ModuleFile{
 	fileHandle : vscode.Uri;
 	fileType : FileType;
-	filePath : String;
-	fileName : String;
+	filePath : string;
+	fileName : string;
 	_moduleRoot : RootModuleFile
 	constructor(fileHandle: vscode.Uri, FileType: FileType, moduleRoot: RootModuleFile,
-	fileName?: String){
+	fileName?: string){
 		if(moduleRoot == null || moduleRoot == undefined)
 			Error("Invalid Module Root")
 		this.fileHandle = fileHandle;

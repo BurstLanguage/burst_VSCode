@@ -13,12 +13,12 @@ var gfiles: string[];
 var gInstance: RootModuleFile;
 
 export class RootModuleFile {
-	projectName: String;
+	projectName: string;
 	rootPath: string
 	moduleFiles: ModuleFile[] = [];
 	resourceFiles: ResourceFile[] = []
 
-	constructor(project: String) {
+	constructor(project: string) {
 		this.projectName = project;
 	}
 
@@ -72,8 +72,8 @@ export class RootModuleFile {
 
 	filterFiles(files: string[]) {
 		var idx: number = 0;
-		let rootPath: String = vscode.workspace.rootPath
-		let projectName: String = rootPath.substring(rootPath.lastIndexOf("\\") + 1, rootPath.length)
+		let rootPath: string = vscode.workspace.rootPath
+		let projectName: string = rootPath.substring(rootPath.lastIndexOf("\\") + 1, rootPath.length)
 		gFileObjects = [];
 		for (idx = 0; idx < files.length; idx++) {
 			let name: string = files[idx].substring(
@@ -120,23 +120,8 @@ export class RootModuleFile {
 	isFileAResource(filePath: string, fileName: string): Boolean {
 		let temp = new ResourceFile(vscode.Uri.parse(filePath),
 			FileType.Resource, this, fileName);
-			console.log(fileName + temp.enumerateResourceType())
 		return temp.enumerateResourceType() != ResourceType.Unknown;
 	}
-
-	// emumerateResources(){
-	// 	var i;
-	// 	var resources: ResourceFile[] = []
-	// 	for(i = 0; i < this.moduleFiles.length; i++){
-	// 		if(this.isFileAResource(this.moduleFiles[i].filePath as string,this.moduleFiles[i].fileName as string)){
-	// 			let res : ResourceFile = new ResourceFile(this.moduleFiles[i].fileHandle,
-	// 			this.moduleFiles[i].fileType,this.moduleFiles[i]._moduleRoot,this.moduleFiles[i].fileName);
-	// 			resources[i] = res;
-	// 		}
-	// 		this.resourceFiles = resources;
-	// 		this.moduleFiles[i] = null;
-	// 	}
-	// }
 
 	getFreeResourceIndex() : number{
 		if(gResourceFileObjects.length == 0)

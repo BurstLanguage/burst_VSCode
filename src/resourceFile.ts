@@ -10,7 +10,7 @@ export class ResourceFile extends ModuleFile {
 	resourceType: ResourceType;
 
 	constructor(fileHandle: vscode.Uri, fileType: FileType,
-		moduleRoot: RootModuleFile, fileName?: String) {
+		moduleRoot: RootModuleFile, fileName?: string) {
 		if (fileType != FileType.Resource)
 			Error("Trying To Construct a ResourceFile object \
 			with a file that is not a resource this may have \
@@ -30,7 +30,7 @@ export class ResourceFile extends ModuleFile {
 		extension == "png" || extension == "tiff" ||  extension == "psd" || 
 		extension == "tga" || extension == "gif")
 			return ResourceType.Image;
-		else if( extension == "mp3" || extension == "wav" ||extension == "ogg" || 
+		else if( extension == "mp3" || extension == "wav" || extension == "ogg" || 
 		extension == "flac" || extension == "wma", extension == "m4a")
 			return ResourceType.Audio;
 		else if (extension == "bin" || extension == "dat")

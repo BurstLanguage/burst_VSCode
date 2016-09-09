@@ -30,8 +30,8 @@ export function helloWorld() {
 }
 
 export async function createBurstModule(){
-    let rootPath : String = vscode.workspace.rootPath
-    let projectName : String = rootPath.substring(rootPath.lastIndexOf("\\") + 1, rootPath.length)
+    let rootPath : string = vscode.workspace.rootPath
+    let projectName : string = rootPath.substring(rootPath.lastIndexOf("\\") + 1, rootPath.length)
     let moduleRoot : RootModuleFile = new RootModuleFile(projectName)
     
     if(await !moduleRoot.createBurstModule())
