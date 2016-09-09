@@ -39,9 +39,16 @@ export class RootModuleFile {
 		this.moduleFiles = gFileObjects;
 		this.resourceFiles = gResourceFileObjects;
 		this.rootPath = vscode.workspace.rootPath + "\\" + this.projectName + ".json";
-
-		if (IO.exists(this.rootPath), this.existsCallback) {
-			IO.unlink(this.rootPath)
+		try{
+			if (IO.exists(this.rootPath), this.existsCallback) {
+				process.on("uncaughtException",function(err){
+					console.log("Module File Does Not Yet Exist");
+				})
+				IO.unlink(this.rootPath)
+			}
+		}
+		catch(Exception){
+			console.log(Exception);
 		}
 
 		let pfile: Thenable<vscode.TextDocument> = vscode.workspace.openTextDocument(vscode.Uri.parse("untitled:" + this.rootPath));
