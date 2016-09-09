@@ -1,1 +1,71 @@
-{"projectName":"testProject","moduleFiles":[{"fileHandle":{"scheme":"","authority":"","path":"hello.burst","fsPath":"hello.burst","query":"","fragment":"","external":"hello.burst","$mid":1},"filePath":"hello.burst","fileType":8,"fileName":"hello"}],"rootPath":"d:\\GitHub\\burst_VSCode\\testProject\\testProject.json"}
+{
+	"moduleFiles": [
+		null,
+		{
+			"fileHandle": {
+				"scheme": "",
+				"authority": "",
+				"path": "hello.burst",
+				"fsPath": "hello.burst",
+				"query": "",
+				"fragment": "",
+				"external": "hello.burst",
+				"$mid": 1
+			},
+			"filePath": "hello.burst",
+			"fileType": 8,
+			"fileName": "hello"
+		},
+		{
+			"fileHandle": {
+				"scheme": "",
+				"authority": "",
+				"path": "test.burst",
+				"fsPath": "test.burst",
+				"query": "",
+				"fragment": "",
+				"external": "test.burst",
+				"$mid": 1
+			},
+			"filePath": "test.burst",
+			"fileType": 8,
+			"fileName": "test"
+		}
+	],
+	"resourceFiles": [
+		{
+			"fileHandle": {
+				"scheme": "",
+				"authority": "",
+				"path": "boot.bin",
+				"fsPath": "boot.bin",
+				"query": "",
+				"fragment": "",
+				"external": "boot.bin",
+				"$mid": 1
+			},
+			"filePath": "boot.bin",
+			"fileType": 2,
+			"fileName": "boot",
+			"resourceType": 16
+		},
+		{
+			"fileHandle": {
+				"scheme": "",
+				"authority": "",
+				"path": "test.txt",
+				"fsPath": "test.txt",
+				"query": "",
+				"fragment": "",
+				"external": "test.txt",
+				"$mid": 1
+			},
+			"filePath": "test.txt",
+			"fileType": 2,
+			"fileName": "test",
+			"resourceType": 2
+		}
+	],
+	"projectName": "testProject",
+	"rootPath": "d:\\GitHub\\burst_VSCode\\testProject\\testProject.json"
+}

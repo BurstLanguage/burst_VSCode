@@ -1,18 +1,23 @@
 'use strict';
 import * as vscode from 'vscode';
 import {FileType} from '../src/fileType';
-
+import {RootModuleFile} from '../src/rootModuleFile'
 
 export class ModuleFile{
 	fileHandle : vscode.Uri;
 	fileType : FileType;
 	filePath : String;
 	fileName : String;
-	constructor(fileHandle: vscode.Uri, FileType: FileType, fileName?: String){
+	_moduleRoot : RootModuleFile
+	constructor(fileHandle: vscode.Uri, FileType: FileType, moduleRoot: RootModuleFile,
+	fileName?: String){
+		if(moduleRoot == null || moduleRoot == undefined)
+			Error("Invalid Module Root")
 		this.fileHandle = fileHandle;
 		this.filePath = fileHandle.path
 		this.fileType = FileType;
-		if(fileName != ""){
+		//this._moduleRoot = moduleRoot;
+		if(fileName != "" && fileName != null && fileName != undefined){
 			this.fileName = fileName
 		}
 		else{
