@@ -1,6 +1,6 @@
 {
-	"projectName": "testProject",
 	"moduleFiles": [
+		null,
 		{
 			"fileHandle": {
 				"scheme": "",
@@ -16,7 +16,39 @@
 			"fileType": 8,
 			"fileName": "hello"
 		},
-		null,
+		{
+			"fileHandle": {
+				"scheme": "",
+				"authority": "",
+				"path": "test.burst",
+				"fsPath": "test.burst",
+				"query": "",
+				"fragment": "",
+				"external": "test.burst",
+				"$mid": 1
+			},
+			"filePath": "test.burst",
+			"fileType": 8,
+			"fileName": "test"
+		}
+	],
+	"resourceFiles": [
+		{
+			"fileHandle": {
+				"scheme": "",
+				"authority": "",
+				"path": "boot.bin",
+				"fsPath": "boot.bin",
+				"query": "",
+				"fragment": "",
+				"external": "boot.bin",
+				"$mid": 1
+			},
+			"filePath": "boot.bin",
+			"fileType": 2,
+			"fileName": "boot",
+			"resourceType": 16
+		},
 		{
 			"fileHandle": {
 				"scheme": "",
@@ -29,9 +61,11 @@
 				"$mid": 1
 			},
 			"filePath": "test.txt",
-			"fileType": 4,
-			"fileName": "test"
+			"fileType": 2,
+			"fileName": "test",
+			"resourceType": 2
 		}
 	],
+	"projectName": "testProject",
 	"rootPath": "d:\\GitHub\\burst_VSCode\\testProject\\testProject.json"
 }
